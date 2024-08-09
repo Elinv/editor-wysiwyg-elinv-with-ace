@@ -54,7 +54,7 @@
 						<div id="editor">
 // Tu código en javascript
 console.log("Tu primer programa");
-	</div>
+						</div>
 					</div>
 				</div>
 
@@ -200,8 +200,19 @@ h1 {
 		});
 		// Including Emmet to Editor  
 		html.setOption("enableEmmet", true);
+		var fromSetValue = false;
 		html.getSession().on('change', function () {
-			update();
+			if (!fromSetValue) {
+        		// user input
+    		}		
+		});
+		// Al presionar enter updata vista html css y javascript
+		addEventListener("keypress", (e) => {
+			if (e.code == 'Enter'){				
+				fromSetValue = true;
+				update();
+				fromSetValue = false;
+			}
 		});
 
 		css.setShowPrintMargin(false);
@@ -318,10 +329,8 @@ h1 {
 			let htmlCodeSource = `${head}  <br><br>  ${estilosCodeRep} <br><br> ${headPostStyle} <br><br> ${htmlSourceCodeRep}  <br><br>  ${bodyEnd}`;			
 
 			// Iframe muestra la vista web
-			let idoc = $id('viewer').contentWindow.document;
-			idoc.open();
-			idoc.write(htmlCode);height="460px" 
-			idoc.close();
+			document.getElementById("viewer").srcdoc = htmlCode;
+
 			// Iframe muestra el códigto fuente
 			let idocView = $id('viewHtmlCode').contentWindow.document;
 			idocView.open();
