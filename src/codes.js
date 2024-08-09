@@ -2,8 +2,15 @@
 const $id = e => document.getElementById(e);
 
 // Base de datos de snippets personales
+/** 
+ * Uso:	
+ * 1°	Label Snippets					ej: console.log\n\t
+ * 2°	Comando inserta					ej:	console.log(\"$1\")
+ * 3°	Tipo editor donde se insertará	ej: javascript | html | css
+*/
 let snipp = [
-	"console.log\n\tconsole.log(\"$1\")",
+	["console.log\n\tconsole.log(\"$1\")","javascript"],
+	["innerHTML\n\tinnerHTML", "html"],
 ];
 
 const head = `&lt;!DOCTYPE html&gt;<br>
