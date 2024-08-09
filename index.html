@@ -32,19 +32,14 @@
 	<h1 class="text-center mt-1 fw-bold">
 		<u style="color:lawngreen">JavaScript IDE</u>
 	</h1>
-	<style>
-		/* .col-md-6{
-			margin-left: 0;
-			margin-right: 0;
-			width: 100%;
-		} */
-	</style>
-
 	<div class="container mt-2">
 		<div class="row">
 			<!-- Tabs de Código -->
-			<div class="col-md-6">
-				 <center><button id="" class="btn btn-success mx-2">Código</button></center>
+			<div id="editCode" class="col-md-6">
+				 <center>
+					<button id="" class="btn btn-success mx-2">Código</button>
+					<button id="fullButton" class="btn btn-success mx-2" onclick="fullScreenEdit(this);">Full</button>
+				</center>
 				<div class="tab">
 					<button id="actInicio" class="tablinksEdit" onclick="openTabEdit(event, 'jsTab')">Javascript</button>
 					<button class="tablinksEdit" onclick="openTabEdit(event, 'htmlTab')">Html</button>
@@ -55,6 +50,7 @@
 					<!-- </div> -->
 				   <button id="runButton" class="btn btn-primary mx-2">Run</button>				
 				   <button id="clearButton" class="btn btn-info mx-2">Clean</button>
+				   
 				</div>
 				<div id="jsTab" class="tabcontentEdit">
 					<div id="editorContainer" class="window mx-0">
@@ -80,15 +76,18 @@ h1 {
 				</div>
 			</div>
 			<!-- Tabs de salida visual -->
-			<div class="col-md-6">
-				 <center><button id="" class="btn btn-success mx-2">Out</button></center>
+			<div id="viewOut" class="col-md-6">
+				 <center>
+					<button id="" class="btn btn-success mx-2">Out</button>
+					<button id="fullButton" class="btn btn-success mx-2" onclick="fullScreenView(this);">Full</button>
+				</center>
 				<div class="tab">
-					<button id="actInicio1" class="tablinksView" onclick="openTabView(event, 'console')">Console</button>
+					<button id="actInicio1" class="tablinksView" onclick="openTabView(event, 'consola')">Console</button>
 					<button class="tablinksView" onclick="openTabView(event, 'Wysick')">View</button>
 					<button class="tablinksView" onclick="openTabView(event, 'viewHtml')">Html Source Code</button>
 				</div>
 
-				<div id="console" class="tabcontentView">
+				<div id="consola" class="tabcontentView">
 					<div id="consoleOutputContainer" class="window mx-0">
 						<div id="consoleOutput"></div>
 					</div>
@@ -101,7 +100,7 @@ h1 {
 				</div>
 
 				<div id="viewHtml" class="tabcontentView">
-					<div id="consoleOutputContainer" class="window mx-0">
+					<div id="consoleOutputContainerCodeHtml" class="window mx-0">
 						<iframe width="100%" style="min-height: calc(73vh - 60px);" id="viewHtmlCode" frameborder="0"></iframe>
 					</div>
 				</div>				

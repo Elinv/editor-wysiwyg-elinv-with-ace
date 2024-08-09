@@ -36,3 +36,54 @@ const bodyEnd = `
 &lt;/body&gt;<br>
 <br>
 &lt;/html&gt;<br>`;
+
+
+// Función full screen 
+function fullScreenEdit(that) {
+	if (that.innerHTML == 'Full'){
+		editCode.classList.add('full');
+		jsTab.classList.add('fullTC');
+		editorContainer.classList.add('fullWIN');
+		htmlTab.classList.add('fullTC');
+		htmlEditor.classList.add('fullWIN');
+		cssTab.classList.add('fullTC');
+		cssEditor.classList.add('fullWIN');		
+		that.innerHTML='Exit';
+	}else{
+		editCode.classList.remove('full'); 
+		editCode.classList.remove('full');
+		jsTab.classList.remove('fullTC');
+		editorContainer.classList.remove('fullWIN');
+		htmlTab.classList.remove('fullTC');
+		htmlEditor.classList.remove('fullWIN');
+		cssTab.classList.remove('fullTC');
+		cssEditor.classList.remove('fullWIN');
+		that.innerHTML='Full';
+	}
+}
+
+function fullScreenView(that) {
+	if (that.innerHTML == 'Full'){
+		viewOut.classList.add('full');
+		consola.classList.add('fullTC');
+		consoleOutputContainer.classList.add('fullWIN');
+		Wysick.classList.add('fullTC');
+		consoleOutputContainerviewhtml.classList.add('fullWIN');
+		viewHtml.classList.add('fullTC');
+		consoleOutputContainerCodeHtml.classList.add('fullWIN');		
+		that.innerHTML='Exit';
+	}else{
+		viewOut.classList.remove('full');
+		consola.classList.remove('fullTC');
+		consoleOutputContainer.classList.remove('fullWIN');
+		Wysick.classList.remove('fullTC');
+		consoleOutputContainerviewhtml.classList.remove('fullWIN');
+		viewHtml.classList.remove('fullTC');
+		consoleOutputContainerCodeHtml.classList.remove('fullWIN');
+		that.innerHTML='Full';
+	}
+}
+
+
+
+
