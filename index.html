@@ -28,7 +28,7 @@
 </head>
 
 <body>
-	<h6 class="text-center mt-2"><sub>Elinv</sub></h6>
+	<h6 class="text-center mt-2"><sub><u style="color:lawngreen">Elinv</u></sub></h6>
 	<h1 class="text-center mt-1 fw-bold">
 		<u style="color:lawngreen">JavaScript IDE</u>
 	</h1>
@@ -37,8 +37,9 @@
 			<!-- Tabs de Código -->
 			<div id="editCode" class="col-md-6">
 				 <center>
+					<button id="msgRefresh" class="btn btn-primary mx-2">Ctrl+Enter for refresh</button>
 					<button id="" class="btn btn-success mx-2">Código</button>
-					<button id="fullButton" class="btn btn-success mx-2" onclick="fullScreenEdit(this);">Full</button>
+					<button id="fullButton" class="btn btn-info mx-2" onclick="fullScreenEdit(this);">Full</button>
 				</center>
 				<div class="tab">
 					<button id="actInicio" class="tablinksEdit" onclick="openTabEdit(event, 'jsTab')">Javascript</button>
@@ -79,7 +80,7 @@ h1 {
 			<div id="viewOut" class="col-md-6">
 				 <center>
 					<button id="" class="btn btn-success mx-2">Out</button>
-					<button id="fullButton" class="btn btn-success mx-2" onclick="fullScreenView(this);">Full</button>
+					<button id="fullButton" class="btn btn-info mx-2" onclick="fullScreenView(this);">Full</button>
 				</center>
 				<div class="tab">
 					<button id="actInicio1" class="tablinksView" onclick="openTabView(event, 'consola')">Console</button>
@@ -208,16 +209,26 @@ h1 {
 		// Including Emmet to Editor  
 		html.setOption("enableEmmet", true);
 		var fromSetValue = false;
-		html.getSession().on('change', function () {
+		html.getSession().on('change', function () {	
 			if (!fromSetValue) {
-        		// user input
-    		}		
+        		// user input				
+			}
 		});
 		// Al presionar enter or Ctrl + Enter updata vista html css y javascript
 		addEventListener("keypress", (e) => {
-			if (e.code == 'Enter'){				
+			if (e.code == 'Enter' || e.code == 'NumpadEnter'){				
 				fromSetValue = true;
 				update();
+				msgRefresh.innerHTML = "Html View Refresh!";
+				msgRefresh.classList.remove('btn-primary');
+				msgRefresh.classList.add('btn-warning');
+
+				setTimeout(() => {
+					msgRefresh.classList.add('btn-primary');
+					msgRefresh.classList.remove('btn-warning');			
+					msgRefresh.innerHTML = "Ctrl+Enter for refresh";
+					
+				}, 5000);
 				fromSetValue = false;
 			}
 		});
