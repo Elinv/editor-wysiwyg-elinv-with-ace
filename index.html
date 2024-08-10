@@ -37,23 +37,23 @@
 			<!-- Tabs de Código -->
 			<div id="editCode" class="col-md-6">
 				 <center>
-					<button id="msgRefresh" class="btn btn-primary mx-2">Ctrl+Enter for refresh</button>
-					<button id="" class="btn btn-success mx-2">Código</button>
-					<button id="fullButton" class="btn btn-info mx-2" onclick="fullScreenEdit(this);">Full</button>
+					<button id="idMsgRfsh" class="btn btn-primary mx-2">Ctrl+Enter for refresh</button>
+					<button id="idButLblCdg" class="btn btn-success mx-2">Código</button>
+					<button id="idButFull" class="btn btn-info mx-2" onclick="fullScreenEdit(this);">Full</button>
 				</center>
 				<div class="tab">
-					<button id="actInicio" class="tablinksEdit" onclick="openTabEdit(event, 'jsTab')">Javascript</button>
-					<button class="tablinksEdit" onclick="openTabEdit(event, 'htmlTab')">Html</button>
-					<button class="tablinksEdit" onclick="openTabEdit(event, 'cssTab')">CSS</button>
+					<button id="idButViewTabJs" class="clsTbLnkEdt" onclick="openTabEdit(event, 'jsTab')">Javascript</button>
+					<button class="clsTbLnkEdt" onclick="openTabEdit(event, 'htmlTab')">Html</button>
+					<button class="clsTbLnkEdt" onclick="openTabEdit(event, 'cssTab')">CSS</button>
 					<!-- <div class="my-4"> -->
-					<!-- <button id="runButton" class="btn btn-success mx-2">Run</button>
-					<button id="clearButton" class="btn btn-info mx-2">Clean</button> -->
+					<!-- <button id="idBtRn" class="btn btn-success mx-2">Run</button>
+					<button id="idBtCln" class="btn btn-info mx-2">Clean</button> -->
 					<!-- </div> -->
-				   <button id="runButton" class="btn btn-primary mx-2">Run</button>				
-				   <button id="clearButton" class="btn btn-info mx-2">Clean</button>
+				   <button id="idBtRn" class="btn btn-primary mx-2">Run</button>				
+				   <button id="idBtCln" class="btn btn-info mx-2">Clean</button>
 				   
 				</div>
-				<div id="jsTab" class="tabcontentEdit">
+				<div id="jsTab" class="clsTbCntntEdt">
 					<div id="editorContainer" class="window mx-0">
 						<div id="editor">
 // Tu código en javascript
@@ -62,13 +62,13 @@ console.log("Tu primer programa");
 					</div>
 				</div>
 
-				<div id="htmlTab" class="tabcontentEdit">
+				<div id="htmlTab" class="clsTbCntntEdt">
 					<div id="htmlEditor" class="window mx-0">&lt;!-- Diseña aquí tu web --&gt;
 &lt;h1&gt;Hola esta es tu primer página&lt;/h1&gt; 
 	</div>
 				</div>
 
-				<div id="cssTab" class="tabcontentEdit">
+				<div id="cssTab" class="clsTbCntntEdt">
 					<div id="cssEditor" class="window mx-0">/* Estilos */
 h1 {
 	color: red;
@@ -80,10 +80,10 @@ h1 {
 			<div id="viewOut" class="col-md-6">
 				 <center>
 					<button id="" class="btn btn-success mx-2">Out</button>
-					<button id="fullButton" class="btn btn-info mx-2" onclick="fullScreenView(this);">Full</button>
+					<button id="idButFull" class="btn btn-info mx-2" onclick="fullScreenView(this);">Full</button>
 				</center>
 				<div class="tab">
-					<button id="actInicio1" class="tablinksView" onclick="openTabView(event, 'consola')">Console</button>
+					<button id="idButViewTabJs1" class="tablinksView" onclick="openTabView(event, 'consola')">Console</button>
 					<button class="tablinksView" onclick="openTabView(event, 'Wysick')">View</button>
 					<button class="tablinksView" onclick="openTabView(event, 'viewHtml')">Html Source Code</button>
 				</div>
@@ -102,7 +102,7 @@ h1 {
 
 				<div id="viewHtml" class="tabcontentView">
 					<div id="consoleOutputContainerCodeHtml" class="window mx-0">
-						<iframe width="100%" style="min-height: calc(73vh - 60px);" id="viewHtmlCode" frameborder="0"></iframe>
+						<iframe width="100%" class="window fullWIN" id="viewHtmlCode" frameborder="0"></iframe>
 					</div>
 				</div>				
 			</div>
@@ -155,11 +155,11 @@ h1 {
 		editor.getSession().on('change', function () {
 			update();
 		});
-		const runButton = $id("runButton");
-		const clearButton = $id("clearButton");
+		const idBtRn = $id("idBtRn");
+		const idBtCln = $id("idBtCln");
 		const consoleOutput = $id("consoleOutput");
 
-		runButton.addEventListener("click", () => {
+		idBtRn.addEventListener("click", () => {
 			consoleOutput.innerHTML = "";
 
 			try {
@@ -180,7 +180,7 @@ h1 {
 			consoleOutput.innerHTML = "";
 		}
 
-		clearButton.addEventListener("click", clearOutput);
+		idBtCln.addEventListener("click", clearOutput);
 	</script>
 
 	<script>
@@ -219,14 +219,14 @@ h1 {
 			if (e.code == 'Enter' || e.code == 'NumpadEnter'){				
 				fromSetValue = true;
 				update();
-				msgRefresh.innerHTML = "Html View Refresh!";
-				msgRefresh.classList.remove('btn-primary');
-				msgRefresh.classList.add('btn-warning');
+				idMsgRfsh.innerHTML = "Html View Refresh!";
+				idMsgRfsh.classList.remove('btn-primary');
+				idMsgRfsh.classList.add('btn-warning');
 
 				setTimeout(() => {
-					msgRefresh.classList.add('btn-primary');
-					msgRefresh.classList.remove('btn-warning');			
-					msgRefresh.innerHTML = "Ctrl+Enter for refresh";
+					idMsgRfsh.classList.add('btn-primary');
+					idMsgRfsh.classList.remove('btn-warning');			
+					idMsgRfsh.innerHTML = "Ctrl+Enter for refresh";
 					
 				}, 5000);
 				fromSetValue = false;
@@ -255,14 +255,14 @@ h1 {
 
 	<script>
 		function openTabEdit(evt, elemento) {
-			var i, tabcontentEdit, tablinks;
-			tabcontentEdit = document.getElementsByClassName("tabcontentEdit");
-			for (i = 0; i < tabcontentEdit.length; i++) {
-				tabcontentEdit[i].style.display = "none";
+			var i, clsTbCntntEdt, tablinks;
+			clsTbCntntEdt = document.getElementsByClassName("clsTbCntntEdt");
+			for (i = 0; i < clsTbCntntEdt.length; i++) {
+				clsTbCntntEdt[i].style.display = "none";
 			}
-			tablinksEdit = document.getElementsByClassName("tablinksEdit");
-			for (i = 0; i < tablinksEdit.length; i++) {
-				tablinksEdit[i].className = tablinksEdit[i].className.replace(" active", "");
+			clsTbLnkEdt = document.getElementsByClassName("clsTbLnkEdt");
+			for (i = 0; i < clsTbLnkEdt.length; i++) {
+				clsTbLnkEdt[i].className = clsTbLnkEdt[i].className.replace(" active", "");
 			}
 			$id(elemento).style.display = "block";
 			evt.currentTarget.className += " active";
@@ -287,8 +287,8 @@ h1 {
 			$id("htmlTab").style.display = "none";
 			$id("cssTab").style.display = "none";
 			$id("viewHtml").style.display = "none";
-			$id("actInicio").className += " active";
-			$id("actInicio1").className += " active";
+			$id("idButViewTabJs").className += " active";
+			$id("idButViewTabJs1").className += " active";
 
 			// Carga desde localStorage
 			// Javascript code
@@ -360,3 +360,18 @@ h1 {
 </body>
 
 </html>
+
+
+<!-- 
+Ayuda nombre <=> identificación elementos
+---------------------------------------------------------------------
+id		idMsgRfsh		id 		Button info Ctrl+Enter para refrescar
+id		idButLblCdg		id 		Button tipo label "Código"
+id		idButFull		id 		Button action full screen.
+id		idButViewTabJs	id 		Button action View Tab Javascript
+cls		clsTbLnkEdt		class	Tabs links edición.
+id		idBtRn			id		Button Run
+id		idBtCln			id		Button Clean 
+cls		clsTbCntntEdt	class	Tab Content Edición.
+---------------------------------------------------------------------
+-->

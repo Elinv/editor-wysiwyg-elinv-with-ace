@@ -84,7 +84,7 @@ body {
 }
 
 /* Style the tab content */
-.tabcontentEdit,
+.clsTbCntntEdt,
 .tabcontentView {
     display: block;
     padding: 0px 0px;
@@ -125,8 +125,8 @@ body {
         flex-direction: column;
     }
 
-    #runButton,
-    #clearButton {
+    #idBtRn,
+    #idBtCln {
         margin: 1px 0;
 
     }    
@@ -164,9 +164,9 @@ body {
     overflow:auto;
 } 	
 .fullTC{
-    height: 90%; 
+    height: 100%; 
 }	
 .fullWIN{
-    height: 90%; 
+    height: 100%; 
 }			
 /* Clases para full Screen tab  */
