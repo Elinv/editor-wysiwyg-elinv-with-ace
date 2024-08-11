@@ -16,22 +16,26 @@
 
 * [x] Si descargan el respositorio funciona perfectamente off line a través de un servidor como puede ser Live Server o el Servidor php a través de la linea de comando bash
 * [x] ➡️ php -S localhost:8000
+* [x] Agregado posibilidad de insertar propios snippets HTML, CSS y JS, a través del archivo "/src/codes.js"
+* [x] En el editor HTML, luego de modificado el código, al presionar "enter" or "Ctrl + Enter" o "Ctrl + NumpadEnter", se updata vista "html css y javascript" en el tab "VIEW"
+* [x] En el Tab "HTML SOURCE CODE", obtienen la totalidad del código, por ustedes diseñado.
+* [x] Se ha posibilitado el poner los tab a pantalla semi completa y recuperar la vista inicial.
 
 ## Imágenes que dicen todo!
 
 > 
 
-![](assets/20240808_124413_editor6.png)
+![](assets/editor6.png)
 
-![](assets/20240808_124413_editor5.png)
+![](assets/editor5.png)
 
-![](assets/20240808_124413_editor4.png)
+![](assets/editor4.png)
 
-![](assets/20240808_124413_editor3.png)
+![](assets/_editor3.png)
 
-![](assets/20240808_124413_editor2.png)
+![](assets/editor2.png)
 
-![](assets/20240808_124413_editor1.png)
+![](assets/editor1.png)
 
 ---
 
@@ -39,7 +43,6 @@
 * 🛠️ Errores, sugerencias, ideas, envialas a nuestro mail: [elinv.elinv@gmail.com](mailto:elinv.elinv@gmail.com)
 
 ---
-
 
 ## Web Elinv.
 
